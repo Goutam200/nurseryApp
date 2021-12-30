@@ -11,8 +11,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Nursery app"),
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
       ),
       body: Center(
         child: Container(
