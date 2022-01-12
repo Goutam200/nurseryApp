@@ -7,11 +7,23 @@ class MyTheme {
       fontFamily: GoogleFonts.lato().fontFamily,
       primaryTextTheme: GoogleFonts.lalezarTextTheme(),
       appBarTheme: AppBarTheme(
-          color: Colors.green,
-          iconTheme: IconThemeData(color: Colors.white),
-          titleTextStyle: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 19)));
+        color: Colors.green,
+        iconTheme: IconThemeData(color: Colors.white),
+        titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 19),
+      ),
+      iconTheme: IconThemeData(color: Colors.black),
+      textSelectionColor: Colors.black);
 
-  static ThemeData darkTheme(BuildContext context) =>
-      ThemeData(brightness: Brightness.dark);
+  static ThemeData darkTheme(BuildContext context) => ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        textSelectionColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          color: Colors.green,
+          titleTextStyle: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 19),
+        ),
+      );
 }

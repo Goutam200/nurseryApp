@@ -30,52 +30,44 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               title: Text(
                 "Plants",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textScaleFactor: 1.2,
               ),
               minVerticalPadding: 0.0,
               trailing: Icon(
                 CupertinoIcons.arrowtriangle_right_circle,
-                color: Colors.black,
               ),
               hoverColor: Colors.blue.shade50,
             ),
             ListTile(
               title: Text(
                 "Nursery",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textScaleFactor: 1.2,
               ),
               minVerticalPadding: 0.0,
               trailing: Icon(
                 CupertinoIcons.arrowtriangle_right_circle,
-                color: Colors.black,
               ),
             ),
             ListTile(
               title: Text(
                 "Care",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textScaleFactor: 1.2,
               ),
               trailing: Icon(
                 CupertinoIcons.arrowtriangle_right_circle,
-                color: Colors.black,
               ),
             ),
             ListTile(
               title: Text(
                 "About us",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold),
                 textScaleFactor: 1.2,
               ),
               trailing: Icon(
                 CupertinoIcons.arrowtriangle_right_circle,
-                color: Colors.black,
               ),
             )
           ],
