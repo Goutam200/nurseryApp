@@ -43,22 +43,45 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Nursery app"),
+        title: Text(
+          "Plant InfoCare",
+          textAlign: TextAlign.center,
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: (CatalogModel.plants != null) && CatalogModel.plants.isNotEmpty
-            ? ListView.builder(
-                itemCount: CatalogModel.plants.length,
-                itemBuilder: (context, index) {
-                  return PlantWidget(
-                    plant: CatalogModel.plants[index],
-                  );
-                },
-              )
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 100),
+        //color: Colors.green[50],
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: (CatalogModel.plants != null) && CatalogModel.plants.isNotEmpty
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemBuilder: (context, index) {
+                    final plant = CatalogModel.plants[index];
+                    return Card(
+                      child: GridTile(
+                        child: Image.network(
+                          plant.image,
+                          //fit: BoxFit.fill,
+                        ),
+                        footer: Text(
+                          plant.name,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount: CatalogModel.plants.length,
+                )
+              : Center(
+                  child: CircularProgressIndicator(),
+                ),
+        ),
       ),
       drawer: MyDrawer(),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/plantpage.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -28,27 +30,29 @@ class MyDrawer extends StatelessWidget {
                     // currentAccountPicture: Image.network(imageUrl),
                     accountName: Text(""))),
             ListTile(
-              title: Text(
-                "Plants",
-                style: TextStyle(fontWeight: FontWeight.bold),
-                textScaleFactor: 1.2,
-              ),
-              minVerticalPadding: 0.0,
-              trailing: Icon(
-                CupertinoIcons.arrowtriangle_right_circle,
-              ),
-              hoverColor: Colors.blue.shade50,
+                onTap: () => Navigator.pushNamed(context, MyRoutes.plantRoute),
+                title: Text(
+                  "Plants",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  textScaleFactor: 1.2,
+                ),
+                minVerticalPadding: 0.0,
+                trailing: Icon(
+                  CupertinoIcons.arrowtriangle_right_circle,
+                ),
+                hoverColor: Colors.lightGreen[300],
             ),
-            ListTile(
-              title: Text(
-                "Nursery",
-                style: TextStyle(fontWeight: FontWeight.bold),
-                textScaleFactor: 1.2,
-              ),
-              minVerticalPadding: 0.0,
-              trailing: Icon(
-                CupertinoIcons.arrowtriangle_right_circle,
-              ),
+           ListTile(
+                onTap: () => Navigator.pushNamed(context, MyRoutes.nurseryRoute),
+                title: Text(
+                  "Nursery",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  textScaleFactor: 1.2,
+                ),
+                minVerticalPadding: 0.0,
+                trailing: Icon(
+                  CupertinoIcons.arrowtriangle_right_circle,
+                ),
             ),
             ListTile(
               title: Text(
