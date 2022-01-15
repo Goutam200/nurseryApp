@@ -67,6 +67,7 @@ class _HomePageState extends State<HomePage> {
                       child: GridTile(
                         child: Image.network(
                           plant.image,
+                          height: 50,
                           //fit: BoxFit.fill,
                         ),
                         footer: Text(

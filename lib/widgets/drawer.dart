@@ -30,29 +30,29 @@ class MyDrawer extends StatelessWidget {
                     // currentAccountPicture: Image.network(imageUrl),
                     accountName: Text(""))),
             ListTile(
-                onTap: () => Navigator.pushNamed(context, MyRoutes.plantRoute),
-                title: Text(
-                  "Plants",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                  textScaleFactor: 1.2,
-                ),
-                minVerticalPadding: 0.0,
-                trailing: Icon(
-                  CupertinoIcons.arrowtriangle_right_circle,
-                ),
-                hoverColor: Colors.lightGreen[300],
+              onTap: () => Navigator.pushNamed(context, MyRoutes.plantRoute),
+              title: Text(
+                "Plants",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                textScaleFactor: 1.2,
+              ),
+              minVerticalPadding: 0.0,
+              trailing: Icon(
+                CupertinoIcons.arrowtriangle_right_circle,
+              ),
+              hoverColor: Colors.lightGreen[300],
             ),
-           ListTile(
-                onTap: () => Navigator.pushNamed(context, MyRoutes.nurseryRoute),
-                title: Text(
-                  "Nursery",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                  textScaleFactor: 1.2,
-                ),
-                minVerticalPadding: 0.0,
-                trailing: Icon(
-                  CupertinoIcons.arrowtriangle_right_circle,
-                ),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, MyRoutes.nurseryRoute),
+              title: Text(
+                "Nursery",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                textScaleFactor: 1.2,
+              ),
+              minVerticalPadding: 0.0,
+              trailing: Icon(
+                CupertinoIcons.arrowtriangle_right_circle,
+              ),
             ),
             ListTile(
               title: Text(
