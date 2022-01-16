@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
     final plantJson = await rootBundle.loadString("assets/files/plant.json");
     var decodeData = jsonDecode(plantJson);
     var plantsData = decodeData["Plants"];
@@ -57,39 +57,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class plantBlock extends StatefulWidget {
-  const plantBlock({Key? key}) : super(key: key);
-
-  @override
-  _plantBlockState createState() => _plantBlockState();
-}
-
-class _plantBlockState extends State<plantBlock> {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-      ),
-      itemBuilder: (context, index) {
-        final plant = CatalogModel.plants[index];
-        return Card(
-          child: GridTile(
-            child: Image.network(
-              plant.image,
-              height: 50,
-              //fit: BoxFit.fill,
-            ),
-            footer: Text(
-              plant.name,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        );
-      },
-      itemCount: CatalogModel.plants.length,
-    );
-  }
-}

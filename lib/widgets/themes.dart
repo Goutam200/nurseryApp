@@ -2,18 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
+  static Padding kDefaultPadding = kDefaultPadding;
+  static Color pLightColor = Colors.green.shade800;
   static ThemeData lightTheme(BuildContext context) => ThemeData(
-      primaryColor: Colors.green,
+      primaryColor: Colors.green.shade50,
       fontFamily: GoogleFonts.lato().fontFamily,
       primaryTextTheme: GoogleFonts.lalezarTextTheme(),
       appBarTheme: AppBarTheme(
-        color: Colors.green,
+        color: Colors.green.shade800,
         iconTheme: IconThemeData(color: Colors.white),
         titleTextStyle: TextStyle(
             fontWeight: FontWeight.bold, color: Colors.white, fontSize: 19),
       ),
       iconTheme: IconThemeData(color: Colors.black),
-      textSelectionColor: Colors.black,
+      buttonTheme: ButtonThemeData(
+          buttonColor: pLightColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          splashColor: Colors.black),
+      scaffoldBackgroundColor: Colors.green.shade100,
       cardTheme: CardTheme(elevation: 5));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
@@ -22,7 +29,7 @@ class MyTheme {
       iconTheme: IconThemeData(color: Colors.white),
       textSelectionColor: Colors.white,
       appBarTheme: AppBarTheme(
-        color: Colors.green,
+        color: Colors.green.shade800,
         titleTextStyle: TextStyle(
             fontWeight: FontWeight.bold, color: Colors.white, fontSize: 19),
       ),
