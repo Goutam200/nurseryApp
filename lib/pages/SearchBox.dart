@@ -10,9 +10,8 @@ class SearchBox extends StatefulWidget {
 
 class _SearchBoxState extends State<SearchBox> {
   @override
-  
   Widget build(BuildContext context) {
-  Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.15,
       child: Stack(
@@ -20,10 +19,10 @@ class _SearchBoxState extends State<SearchBox> {
           Container(
             height: size.height * 0.15 - 27,
             decoration: BoxDecoration(
-              color: Colors.green.shade800,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(34),
-                bottomRight: Radius.circular(34))),
+                color: Colors.green.shade800,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(34),
+                    bottomRight: Radius.circular(34))),
           ),
           Search()
         ],
@@ -32,18 +31,17 @@ class _SearchBoxState extends State<SearchBox> {
   }
 }
 
-
 class Search extends StatelessWidget {
-  const Search({ Key? key }) : super(key: key);
+  const Search({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 54,
-      child: Container(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 54,
+        child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.symmetric(horizontal: 20),
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -62,11 +60,11 @@ class Search extends StatelessWidget {
                 hintText: "Search",
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
-                suffixIcon: Icon(CupertinoIcons.search)),
+                suffixIcon: Icon(
+                  CupertinoIcons.search,
+                  color: Colors.black,
+                )),
           ),
-      )
-    );
+        ));
   }
 }
-
- 

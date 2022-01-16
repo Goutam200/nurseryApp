@@ -9,6 +9,8 @@ import 'package:flutter_application_1/pages/SearchBox.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 
+import 'PlantRow.dart';
+
 class body extends StatelessWidget {
   const body({Key? key}) : super(key: key);
 
@@ -33,7 +35,7 @@ class body extends StatelessWidget {
                   size: size,
                   title: 'Flowering',
                 ),
-                plantRow1()
+                plantRow()
               ],
             ),
           ),
@@ -50,7 +52,7 @@ class body extends StatelessWidget {
                   size: size,
                   title: 'Foliage',
                 ),
-                plantRow1()
+                plantRow()
               ],
             ),
           ),
@@ -67,95 +69,11 @@ class body extends StatelessWidget {
                   size: size,
                   title: 'Indoor',
                 ),
-                plantRow1()
+                plantRow()
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class plantRow1 extends StatelessWidget {
-  const plantRow1({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(children: [
-        PlantsRow(
-          image: CatalogModel.plants[0].image,
-          title: CatalogModel.plants[0].name,
-          press: () {},
-        ),
-        PlantsRow(
-          image: CatalogModel.plants[1].image,
-          title: CatalogModel.plants[1].name,
-          press: () {},
-        ),
-        PlantsRow(
-          image: CatalogModel.plants[0].image,
-          title: CatalogModel.plants[0].name,
-          press: () {},
-        ),
-        PlantsRow(
-          image: CatalogModel.plants[1].image,
-          title: CatalogModel.plants[1].name,
-          press: () {},
-        ),
-      ]),
-    );
-  }
-}
-
-class PlantsRow extends StatelessWidget {
-  const PlantsRow({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.press,
-  }) : super(key: key);
-
-  final String image;
-  final String title;
-  final Function press;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.only(top: 0, bottom: 6, left: 15, right: 0),
-      width: size.width * 0.4,
-      child: Card(
-        child: Column(
-          children: [
-            Image.network(image),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 4),
-                width: size.width * 0.4,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      BoxShadow(
-                          offset: Offset(0, 5),
-                          blurRadius: 15,
-                          color: MyTheme.pLightColor.withOpacity(0.10))
-                    ]),
-                child: Text(
-                  title.toUpperCase(),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            )
-          ],
-        ),
       ),
     );
   }

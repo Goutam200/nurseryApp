@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
@@ -53,7 +53,18 @@ class _HomePageState extends State<HomePage> {
       ),
       body: body(),
       drawer: MyDrawer(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.house_alt),
+              label: "Home",
+              backgroundColor: Colors.black),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.circle_grid_3x3), label: "Category"),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.heart_circle), label: "Care"),
+        ],
+      ),
     );
   }
 }
-
