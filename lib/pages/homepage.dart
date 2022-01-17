@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
-import 'package:flutter_application_1/pages/body.dart';
+import 'package:flutter_application_1/widgets/Body.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/itemWidget.dart';
 

@@ -8,11 +8,10 @@ import 'package:flutter_application_1/models/Catalog.dart';
 import 'package:flutter_application_1/models/Nursery.dart';
 //import 'package:flutter_application_1/pages/SearchBox.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
-import 'package:flutter_application_1/widgets/PlantRow.dart';
-import 'package:flutter_application_1/widgets/SearchBox.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 
-//import 'PlantRow.dart';
+import 'PlantRow.dart';
+import 'SearchBox.dart';
 
 class body extends StatelessWidget {
   const body({Key? key}) : super(key: key);
@@ -65,7 +64,7 @@ class HomeContainer extends StatelessWidget {
     return Container(
       color: Colors.white54,
       margin: EdgeInsets.only(left: 15, right: 0),
-      height: size.height * 0.28,
+      height: size.height * 0.32,
       child: Column(
         children: [
           categoryTitle(

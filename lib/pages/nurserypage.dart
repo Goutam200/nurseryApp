@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/Nursery.dart';
 
+import 'PlantPage.dart';
+
+//import 'PlantPage.dart';
+
 class NurseryPage extends StatefulWidget {
   const NurseryPage({Key? key}) : super(key: key);
 
@@ -43,16 +47,17 @@ class _NurseryPageState extends State<NurseryPage> {
         child: ListView.builder(
           itemCount: NurseryModel.nursery.length,
           itemBuilder: (context, index) {
-            final category = NurseryModel.nursery[index];
+            final nursery = NurseryModel.nursery[index];
             return Card(
               child: ListTile(
+                onTap:() => (){},
                 leading: Image.network(
-                  category.image,
+                  nursery.image,
                   width: 80,
                   fit: BoxFit.cover,
                 ),
-                title: Text(category.name),
-                subtitle: Text(category.location),
+                title: Text(nursery.name),
+                subtitle: Text(nursery.location),
                 minVerticalPadding: 7,
               ),
             );

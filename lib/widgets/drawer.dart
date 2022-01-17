@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/plantpage.dart';
+import 'package:flutter_application_1/pages/CategoryPage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -30,7 +30,7 @@ class MyDrawer extends StatelessWidget {
                     // currentAccountPicture: Image.network(imageUrl),
                     accountName: Text(""))),
             ListTile(
-              onTap: () => Navigator.pushNamed(context, MyRoutes.plantRoute),
+              onTap: () => Navigator.pushNamed(context, MyRoutes.categoryRoute),
               title: Text(
                 "Plants",
                 style: TextStyle(fontWeight: FontWeight.bold),

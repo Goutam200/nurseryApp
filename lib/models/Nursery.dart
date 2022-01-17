@@ -1,5 +1,22 @@
 class NurseryModel {
-  static List<Nursery> nursery = [];
+  static List<Nursery> nursery = [
+    Nursery(
+        "Nature Nursery",
+        "https://indiagardening.com/directory/wp-content/uploads/2019/09/2-6-245x270.jpg",
+        ""),
+    Nursery(
+        "Jain Nursery",
+        "https://indiagardening.com/directory/wp-content/uploads/2019/10/bestnurseryinindore2.jpg",
+        "location"),
+    Nursery(
+        "Nita Nursery",
+        "https://indiagardening.com/directory/wp-content/uploads/2019/10/bestnurseryinindore3.jpg",
+        "location"),
+    Nursery(
+        "Udhyan Nursery",
+        "https://indiagardening.com/directory/wp-content/uploads/2019/10/bestnurseryinindore4.jpg",
+        "location"),
+  ];
 }
 
 class Nursery {
