@@ -13,17 +13,18 @@ class PlantPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(item.name),
       ),
-      body: GridView.builder(
-          itemCount: CatalogModel.plants.length,
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (context, index) {
-            Plant plant = CatalogModel.plants[index];
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+            itemCount: CatalogModel.plants.length,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            itemBuilder: (context, index) {
+              Plant plant = CatalogModel.plants[index];
 
-            return ItemTile(
-                press: (){},
-                item: plant);
-          }),
+              return ItemTile(item: plant);
+            }),
+      ),
     );
   }
 }

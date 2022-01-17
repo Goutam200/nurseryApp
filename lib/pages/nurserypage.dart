@@ -50,7 +50,11 @@ class _NurseryPageState extends State<NurseryPage> {
             final nursery = NurseryModel.nursery[index];
             return Card(
               child: ListTile(
-                onTap:() => (){},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PlantPage(item: nursery)),
+                ),
                 leading: Image.network(
                   nursery.image,
                   width: 80,

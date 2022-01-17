@@ -1,22 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/Catalog.dart';
+import 'package:flutter_application_1/pages/PlantInfoPage.dart';
+import 'package:flutter_application_1/pages/PlantPage.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 
 class ItemTile extends StatelessWidget {
   const ItemTile({
     Key? key,
-    required this.press,
-    this.item,
+    required this.item,
   }) : super(key: key);
 
-  final press;
+  //final press;
   final dynamic item;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: press,
+      // Navigator.push(context, MaterialPageRoute(builder: (context) => PlantInfoPage(plant: item)))
+      // Navigator.push(context,MaterialPageRoute(builder: (context) =>PlantPage(item: item)))
+      onTap: ()=> item is Plant ? Navigator.push(context, MaterialPageRoute(builder: (context) => PlantInfoPage(plant: item)))
+      : Navigator.push(context,MaterialPageRoute(builder: (context) =>PlantPage(item: item))),
+
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
         width: size.width * 0.4,
@@ -31,7 +37,7 @@ class ItemTile extends StatelessWidget {
               ),
               Container(
                 //height: 20,
-                padding: EdgeInsets.symmetric(vertical: 0),
+                padding: EdgeInsets.all(4),
                 width: size.width * 0.4,
                 decoration: BoxDecoration(
                     //color: Colors.white,

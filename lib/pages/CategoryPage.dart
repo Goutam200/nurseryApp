@@ -62,7 +62,7 @@ class _PlantPageState extends State<CategoryPage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          PlantPage(item: CategoryModel.category[index])),
+                          PlantPage(item: mycategory)),
                 ),
               ),
             );

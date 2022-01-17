@@ -53,7 +53,6 @@ class plantRow extends StatelessWidget {
       child: Row(children: [
         for (int i = 0; i < 2; i++)
           ItemTile(
-            press: () => press,
             item: list[i],
           )
       ]),
