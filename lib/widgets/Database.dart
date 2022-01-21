@@ -12,7 +12,7 @@ class DatabaseServices {
   List<Plant> _PlantListFromSnapshot(QuerySnapshot snap) {
     return snap.docs.map((doc) {
       return Plant(
-          name: doc.get("name"),
+          name: doc.get("name").toString().trim(),
           id: doc.get("id"),
           description: doc.get("description"),
           daysWithoutCare: doc.get("dayswithoutcare"),

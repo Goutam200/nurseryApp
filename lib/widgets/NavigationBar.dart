@@ -1,18 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 
-class MyNavigationBar extends StatelessWidget {
+class MyNavigationBar extends StatefulWidget {
   const MyNavigationBar({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var selectedIndex = 0;
+  State<MyNavigationBar> createState() => _MyNavigationBarState();
+}
 
+class _MyNavigationBarState extends State<MyNavigationBar> {
+  static int _selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(CupertinoIcons.house_alt),
           label: "Home",
@@ -23,16 +29,18 @@ class MyNavigationBar extends StatelessWidget {
         BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.heart_circle), label: "Care"),
       ],
-      selectedItemColor: Colors.green,
+      currentIndex: _selectedIndex,
+      backgroundColor: MyTheme.pLightColor,
+      selectedItemColor: Colors.white,
       unselectedItemColor: Colors.black,
       onTap: (index) {
-        selectedIndex = index;
-        // if (index == 0)
-        //   Navigator.pushNamed(context, MyRoutes.homeRoute);
-        // else if (index == 1)
-        //   Navigator.pushNamed(context, MyRoutes.categoryRoute);
-        setState() {}
-        ;
+        if (index == 0)
+          Navigator.pushNamed(context, MyRoutes.homeRoute);
+        else if (index == 1)
+          Navigator.pushNamed(context, MyRoutes.categoryRoute);
+        setState(() {
+          _selectedIndex = index;
+        });
       },
     );
   }

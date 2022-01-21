@@ -29,29 +29,31 @@ class ItemTile extends StatelessWidget {
               MaterialPageRoute(builder: (context) => PlantPage(item: item))),
 
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5),
+        margin: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
         width: size.width * 0.4,
         child: Card(
+          // margin: EdgeInsets.symmetric(horizontal: 5),
           child: Column(
             children: [
-              item is Plant ?
-              Image.asset(
-                item.image,
-                width: size.width * 0.4,
-                height: 120,
-                fit: BoxFit.fill,
-              ) : Image.network(
-                item.image,
-                width: size.width * 0.4,
-                height: 120,
-                fit: BoxFit.fill,
-              ),
+              item is Plant
+                  ? Image.asset(
+                      'assets/images/plants/${item.image}',
+                      width: size.width * 0.4,
+                      height: 120,
+                      fit: BoxFit.fill,
+                    )
+                  : Image.network(
+                      item.image,
+                      width: size.width * 0.4,
+                      height: 120,
+                      fit: BoxFit.fill,
+                    ),
               Container(
-                height: 36,
+                // height: 36,
                 alignment: Alignment.center,
-                padding: item.name.length > 15
-                    ? EdgeInsets.all(0)
-                    : EdgeInsets.all(10),
+                // padding: item.name.length > 15
+                //     ? EdgeInsets.all(0)
+                //     : EdgeInsets.all(10),
                 width: size.width * 0.4,
                 decoration: BoxDecoration(
                     //color: Colors.white,
@@ -63,7 +65,7 @@ class ItemTile extends StatelessWidget {
                           color: MyTheme.pLightColor.withOpacity(0.10))
                     ]),
                 child: Text(
-                  item.name.toUpperCase(),
+                  item.name,
                   textAlign: TextAlign.center,
                 ),
               )

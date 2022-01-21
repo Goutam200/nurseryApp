@@ -23,7 +23,9 @@ class PlantPage extends StatelessWidget {
               Plant plant = CatalogModel.plants[index];
 
               return ItemTile(item: plant);
-            }),
+            },
+            
+        ),
       ),
     );
   }

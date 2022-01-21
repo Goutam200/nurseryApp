@@ -10,7 +10,6 @@ import 'package:flutter_application_1/models/Nursery.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:provider/provider.dart';
-
 import 'PlantRow.dart';
 import 'SearchBox.dart';
 
@@ -20,6 +19,7 @@ class body extends StatelessWidget {
   Widget build(BuildContext context) {
     final PlantsInfo = Provider.of<List<Plant>>(context);
     CatalogModel.plants = PlantsInfo;
+    // List a = <List>CatalogModel.plants.getRange(1, 4);
 
     Size size = MediaQuery.of(context).size;
 
@@ -29,18 +29,17 @@ class body extends StatelessWidget {
           SearchBox(),
           SizedBox(height: 30),
           HomeContainer(
-            title: "Flowering",
-            list: CatalogModel.plants,
-          ),
+              title: "Bonsai",
+              list: CatalogModel.plants.getRange(24, 30).toList()),
           SizedBox(height: 30),
           HomeContainer(
             title: "Foliage",
-            list: CatalogModel.plants,
+            list: CatalogModel.plants.getRange(0, 6).toList(),
           ),
           SizedBox(height: 30),
           HomeContainer(
             title: "Indoor",
-            list: CatalogModel.plants,
+            list: CatalogModel.plants.getRange(12, 18).toList(),
           ),
           SizedBox(height: 30),
           HomeContainer(
