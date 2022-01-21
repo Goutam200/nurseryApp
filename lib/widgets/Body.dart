@@ -9,15 +9,18 @@ import 'package:flutter_application_1/models/Nursery.dart';
 //import 'package:flutter_application_1/pages/SearchBox.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
+import 'package:provider/provider.dart';
 
 import 'PlantRow.dart';
 import 'SearchBox.dart';
 
 class body extends StatelessWidget {
   const body({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final PlantsInfo = Provider.of<List<Plant>>(context);
+    CatalogModel.plants = PlantsInfo;
+
     Size size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
@@ -64,7 +67,7 @@ class HomeContainer extends StatelessWidget {
     return Container(
       color: Colors.white54,
       margin: EdgeInsets.only(left: 15, right: 0),
-      height: size.height * 0.32,
+      height: size.height * 0.35,
       child: Column(
         children: [
           categoryTitle(

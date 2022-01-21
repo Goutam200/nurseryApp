@@ -51,10 +51,13 @@ class plantRow extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(children: [
-        for (int i = 0; i < 2; i++)
-          ItemTile(
-            item: list[i],
-          )
+        for (var item in list) 
+          ItemTile(item: item)
+        
+        // for (int i = 0; i < 3; i++)
+        //   ItemTile(
+        //     item: list[i],
+        //   )
       ]),
     );
   }

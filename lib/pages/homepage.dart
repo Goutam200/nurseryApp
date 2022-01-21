@@ -3,9 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/Body.dart';
+import 'package:flutter_application_1/widgets/NavigationBar.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/itemWidget.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,20 +30,28 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
-    final plantJson = await rootBundle.loadString("assets/files/plant.json");
-    var decodeData = jsonDecode(plantJson);
-    var plantsData = decodeData["Plants"];
-    CatalogModel.plants = List.from(plantsData)
-        .map<Plant>((plant) => Plant.fromMap(plant))
-        .toList();
+    // await Future.delayed(Duration(seconds: 2));
+    // final plantJson = await rootBundle.loadString("assets/files/plant.json");
+    // var decodeData = jsonDecode(plantJson);
+    // var plantsData = decodeData["Plants"];
+    // CatalogModel.plants = List.from(plantsData)
+    //     .map<Plant>((plant) => Plant.fromMap(plant))
+    //     .toList();
 
-    setState(() {});
+    // setState(() {});
+    // final PlantsInfo = Provider.of<List<Plant>>(context);
+    // CatalogModel.plants = PlantsInfo;
   }
 
   @override
   Widget build(BuildContext context) {
     //final dummyList = List.generate(10, (index) => CatalogModel.plants[0]);
+    // void _onTap(int index)
+    // {
+    //   if(index == 1)
+    //     ()=> Navigator.pushNamed(context, MyRoutes.categoryRoute)
+    // }
+    var index;
 
     return Scaffold(
       appBar: AppBar(
@@ -53,18 +64,10 @@ class _HomePageState extends State<HomePage> {
       ),
       body: body(),
       drawer: MyDrawer(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.house_alt),
-              label: "Home",
-              backgroundColor: Colors.black),
-          BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.circle_grid_3x3), label: "Category"),
-          BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.heart_circle), label: "Care"),
-        ],
-      ),
+      bottomNavigationBar: MyNavigationBar(),
     );
   }
 }
+
+
+

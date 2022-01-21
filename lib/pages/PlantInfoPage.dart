@@ -17,7 +17,7 @@ class PlantInfoPage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            child: Image.network(plant.image),
+            child: Image.asset(plant.image),
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(10),
           )

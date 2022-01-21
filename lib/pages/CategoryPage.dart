@@ -8,6 +8,7 @@ import 'package:flutter_application_1/models/Category.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
 import 'package:flutter_application_1/pages/PlantPage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/NavigationBar.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({Key? key}) : super(key: key);
@@ -61,14 +62,14 @@ class _PlantPageState extends State<CategoryPage> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          PlantPage(item: mycategory)),
+                      builder: (context) => PlantPage(item: mycategory)),
                 ),
               ),
             );
           },
         ),
       ),
+      bottomNavigationBar: MyNavigationBar(),
     );
   }
 }

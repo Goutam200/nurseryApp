@@ -20,8 +20,13 @@ class ItemTile extends StatelessWidget {
     return InkWell(
       // Navigator.push(context, MaterialPageRoute(builder: (context) => PlantInfoPage(plant: item)))
       // Navigator.push(context,MaterialPageRoute(builder: (context) =>PlantPage(item: item)))
-      onTap: ()=> item is Plant ? Navigator.push(context, MaterialPageRoute(builder: (context) => PlantInfoPage(plant: item)))
-      : Navigator.push(context,MaterialPageRoute(builder: (context) =>PlantPage(item: item))),
+      onTap: () => item is Plant
+          ? Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PlantInfoPage(plant: item)))
+          : Navigator.push(context,
+              MaterialPageRoute(builder: (context) => PlantPage(item: item))),
 
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -29,15 +34,24 @@ class ItemTile extends StatelessWidget {
         child: Card(
           child: Column(
             children: [
-              Image.network(
+              item is Plant ?
+              Image.asset(
+                item.image,
+                width: size.width * 0.4,
+                height: 120,
+                fit: BoxFit.fill,
+              ) : Image.network(
                 item.image,
                 width: size.width * 0.4,
                 height: 120,
                 fit: BoxFit.fill,
               ),
               Container(
-                //height: 20,
-                padding: EdgeInsets.all(4),
+                height: 36,
+                alignment: Alignment.center,
+                padding: item.name.length > 15
+                    ? EdgeInsets.all(0)
+                    : EdgeInsets.all(10),
                 width: size.width * 0.4,
                 decoration: BoxDecoration(
                     //color: Colors.white,
