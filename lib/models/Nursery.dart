@@ -15,7 +15,8 @@ class NurseryModel {
     Nursery(
         "Udhyan Nursery",
         "https://indiagardening.com/directory/wp-content/uploads/2019/10/bestnurseryinindore4.jpg",
-        "location"),
+        "location"
+      ),
   ];
 }
 

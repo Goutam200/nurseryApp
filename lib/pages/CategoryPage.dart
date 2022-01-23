@@ -43,31 +43,30 @@ class _PlantPageState extends State<CategoryPage> {
       appBar: AppBar(
         title: Text("Plants By Category"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 15),
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: CategoryModel.category.length,
-          itemBuilder: (context, index) {
-            final mycategory = CategoryModel.category[index];
-            return Card(
-              child: ListTile(
-                leading: Image.network(
-                  mycategory.image,
-                  width: 100,
-                  fit: BoxFit.cover,
-                ),
-                title: Text(mycategory.name),
-                minVerticalPadding: 20,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PlantPage(item: mycategory)),
-                ),
+      body: ListView.builder(
+        shrinkWrap: true,
+        itemCount: CategoryModel.category.length,
+        itemBuilder: (context, index) {
+          final mycategory = CategoryModel.category[index];
+          return Card(
+            margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+            child: ListTile(
+              leading: Image.network(
+                mycategory.image,
+                width: 100,
+                fit: BoxFit.cover,
               ),
-            );
-          },
-        ),
+              title: Text(mycategory.name),
+              minVerticalPadding: 20,
+              horizontalTitleGap: 20,
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PlantPage(item: mycategory)),
+              ),
+            ),
+          );
+        },
       ),
       bottomNavigationBar: MyNavigationBar(),
     );

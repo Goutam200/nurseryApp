@@ -18,8 +18,6 @@ class ItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return InkWell(
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => PlantInfoPage(plant: item)))
-      // Navigator.push(context,MaterialPageRoute(builder: (context) =>PlantPage(item: item)))
       onTap: () => item is Plant
           ? Navigator.push(
               context,
@@ -27,18 +25,20 @@ class ItemTile extends StatelessWidget {
                   builder: (context) => PlantInfoPage(plant: item)))
           : Navigator.push(context,
               MaterialPageRoute(builder: (context) => PlantPage(item: item))),
-
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 7),
         width: size.width * 0.4,
+        // height: size.height * 0.3,
         child: Card(
           // margin: EdgeInsets.symmetric(horizontal: 5),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Column(
             children: [
               item is Plant
                   ? Image.asset(
                       'assets/images/plants/${item.image}',
-                      width: size.width * 0.4,
+                      width: size.width * 0.43,
                       height: 120,
                       fit: BoxFit.fill,
                     )
@@ -51,9 +51,9 @@ class ItemTile extends StatelessWidget {
               Container(
                 // height: 36,
                 alignment: Alignment.center,
-                // padding: item.name.length > 15
-                //     ? EdgeInsets.all(0)
-                //     : EdgeInsets.all(10),
+                padding: item.name.length > 16
+                    ? EdgeInsets.all(0)
+                    : EdgeInsets.all(10),
                 width: size.width * 0.4,
                 decoration: BoxDecoration(
                     //color: Colors.white,
@@ -67,6 +67,7 @@ class ItemTile extends StatelessWidget {
                 child: Text(
                   item.name,
                   textAlign: TextAlign.center,
+                  overflow: TextOverflow.clip,
                 ),
               )
             ],

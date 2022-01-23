@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
 
@@ -20,10 +22,19 @@ class PlantInfoPage extends StatelessWidget {
             child: Image.asset(
               'assets/images/plants/${plant.image}',
               width: size.width * 0.8,
-              height: size.height * 0.5,
+              height: size.height * 0.35,
+              fit: BoxFit.fill,
+              alignment: Alignment.center,
             ),
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
+          ),
+          Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Text(
+                plant.description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontFamily: ""),
+              )
           )
         ],
       ),

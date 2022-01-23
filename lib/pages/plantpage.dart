@@ -9,23 +9,20 @@ class PlantPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(item.name),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: GridView.builder(
-            itemCount: CatalogModel.plants.length,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            itemBuilder: (context, index) {
-              Plant plant = CatalogModel.plants[index];
+      body: GridView.builder(
+        itemCount: CatalogModel.plants.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (context, index) {
+          Plant plant = CatalogModel.plants[index];
 
-              return ItemTile(item: plant);
-            },
-            
-        ),
+          return ItemTile(item: plant);
+        },
       ),
     );
   }
