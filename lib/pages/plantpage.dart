@@ -10,6 +10,7 @@ class PlantPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(item.name),

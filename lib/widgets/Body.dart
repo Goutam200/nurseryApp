@@ -27,26 +27,26 @@ class body extends StatelessWidget {
       child: Column(
         children: [
           SearchBox(),
-          SizedBox(height: 30),
+          SizedBox(height: size.height * 0.05),
           HomeContainer(
               title: "Bonsai",
               list: CatalogModel.plants.getRange(24, 30).toList()),
-          SizedBox(height: 30),
+          SizedBox(height: size.height * 0.05),
           HomeContainer(
             title: "Foliage",
             list: CatalogModel.plants.getRange(0, 6).toList(),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: size.height * 0.05),
           HomeContainer(
             title: "Indoor",
             list: CatalogModel.plants.getRange(12, 18).toList(),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: size.height * 0.05),
           HomeContainer(
             title: "Nursery",
             list: NurseryModel.nursery,
           ),
-          SizedBox(height: 50),
+          SizedBox(height: size.height * 0.083),
         ],
       ),
     );
@@ -65,7 +65,7 @@ class HomeContainer extends StatelessWidget {
 
     return Container(
       color: Colors.white54,
-      margin: EdgeInsets.only(left: 15, right: 0),
+      margin: EdgeInsets.only(left: size.width * 0.04, right: 0),
       height: size.height * 0.35,
       child: Column(
         children: [
